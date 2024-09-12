@@ -4,9 +4,9 @@
 
 中文 | [English](./README_EN.md)
 
-一键免费部署你的私人 ChatGPT+Midjourney 网页应用（基于[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web)开发）
+一一键拥有你自己的 ChatGPT+StabilityAI+Midjourney 网页服务（基于[ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web)开发）
 
-[QQ交流群](https://github.com/Licoy/ChatGPT-Midjourney/issues/30) | [💥PRO版本](https://github.com/Licoy/ChatGPT-Midjourney-Pro)
+[QQ交流群](https://github.com/Licoy/ChatGPT-Midjourney/issues/30) | [💥PRO版本](https://github.com/Licoy/GoAmzAI)
 
 [![WordPress+ChatGPT支持](https://img.shields.io/badge/WordPress-AIGC%20部署-red.svg?logo=wordpress&logoColor=red)](https://github.com/Licoy/wordpress-theme-puock)
 
@@ -15,46 +15,48 @@
 </div>
 
 ## 功能支持
-> 🍭 PRO版本支持更强大的功能，**宝塔5分钟部署**，配置超简单，强大的在线后台管理及配置框架让你丝滑体验，**占用内存不到100M**，**包含对话+绘画账号池支持等等**，支持高并发：[💥 点我立即查看及体验PRO版本](https://github.com/Licoy/ChatGPT-Midjourney-Pro)，**最低1C1G的服务器就能流畅运行**。
+> 🍭 PRO版本支持更强大的功能：
+> - 最低1C1G的服务器就能流畅运行
+> - 宝塔极速可视化部署、配置简单易懂
+> - 站点完全自适应支持PC、平板、手机
+> - 低内存占用，Golang开发原生高并发支持
+> - 包含AI对话、AI绘画、AI音乐、AI视频、AI生成PPT、PDF解析对话、AI应用支持等众多AI模块
+> - 具有非常完善的运营机制，包括但不限于套餐系统、兑换码系统、邀请奖励、签到福利、推广返利等等
+> - [🫱 点我立即了解及体验PRO版本](https://github.com/Licoy/GoAmzAI)
 
 ### 已支持
 - [x] 原`ChatGPT-Next-Web`所有功能
-- [x] Midjourney `Imgine` 想象
-- [x] Midjourney `Upscale` 放大
-- [x] Midjourney `Variation` 变幻
-- [x] Midjourney `Zoom` 扩图
-- [x] Midjourney `Vary` 变化
-- [x] Midjourney `Pan` 平移
-- [x] Midjourney `Reroll` 重新生成
-- [x] Midjourney `Describe` 识图
-- [x] Midjourney `Blend` 混图
-- [x] Midjourney 垫图
+- [x] Midjourney `Imgine` `Upscale`  `Variation`  `Zoom`  `Vary`  `Pan`  `Reroll`  `Describe`  `Blend` 等众多操作，完美支持 Midjourney 图像生成之后的任何操作
+- [x] Midjourney 区域重绘（Vary Region）支持
+- [x] Midjourney 参考图片
 - [x] 绘图进度百分比、实时图像显示
-- [x] 自定义Discord的API、CDN、Websocket支持
-- [x] 自身内部支持 Midjourney 服务，无需任何第三方依赖
+- [x] 支持 Stable Image Ultra
+- [x] 支持 Stable Image Core
+- [x] 支持 Stable Diffusion 3
 
-## 中转API
+## MJ Proxy API支持
+> 本项目Midjourney相关API能力由 [trueai-org/midjourney-proxy](https://github.com/trueai-org/midjourney-proxy) 开源项目或同类项目提供API生成能力支持，使用本项目之前您需要先自建此服务，或者使用第三方中转平台的API。
+
+### Midjourney-Proxy
+- 项目地址：[trueai-org/midjourney-proxy](https://github.com/trueai-org/midjourney-proxy)
+- 支持系统：Linux / Windows / MacOS
+- 部署方式：Docker、一键脚本、安装包等
+
+### 第三方中转API
 > 以下为第三方中转API，本项目不做任何担保，请自行选择使用，若遇到任何疑问请联系对应的平台客服。
 
-### [GPTNB](https://goapi.gptnb.me)
-支持ChatGPT、Claude、GPTs、Midjourney等多种模型的API接入，且超低成本比例 [[立即访问]](https://goapi.gptnb.me)
+[![GPTNB中转API](https://img.shields.io/badge/GPTNB%20优质的第三方官转API-2E8B57.svg?logo=openai&logoColor=green&style=for-the-badge)](https://goapi.gptnb.ai)
+
+[![GPTNB中转API](https://img.shields.io/badge/VMAN%20优选的第三方高速API-50616D.svg?logo=openai&logoColor=green&style=for-the-badge)](https://api.mjdjourney.cn)
 
 ## 参数说明
-### MJ_SERVER_ID
-Discord 服务器ID
-### MJ_CHANNEL_ID
-Discord 频道ID
-### MJ_USER_TOKEN
-Discord 用户Token
-### MJ_DISCORD_PROXY
-Discord 代理域名，默认为：`https://discord.com`
-### MJ_DISCORD_WSS_PROXY
-Discord Websocket代理域名，默认为：`wss://gateway.discord.gg`
-### MJ_DISCORD_CDN_PROXY
-Discord CDN代理域名，默认为：`https://cdn.discordapp.com`
-### CODE
+### `MJ_PROXY_URL`
+MJ Proxy的API链接地址
+### `MJ_PROXY_KEY`
+MJ Proxy的API密钥
+### `CODE`
 （可选）设置页面中的访问密码
-### 其余参数
+### `...其余参数`
 与 ChatGPT-Next-Web 一致
 
 ## 部署
@@ -63,13 +65,12 @@ Discord CDN代理域名，默认为：`https://cdn.discordapp.com`
 docker run -d -p 3000:3000 \
    -e OPENAI_API_KEY="sk-xxx" \
    -e BASE_URL="https://api.openai.com" \
-   -e MJ_SERVER_ID="" \
-   -e MJ_CHANNEL_ID="" \
-   -e MJ_USER_TOKEN="" \
-   licoy/chatgpt-midjourney:v3.2.3
+   -e MJ_PROXY_URL="" \
+   -e MJ_PROXY_KEY="" \
+   licoy/chatgpt-midjourney:latest
 ```
 ### Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLicoy%2FChatGPT-Midjourney&env=OPENAI_API_KEY&env=MJ_SERVER_ID&env=MJ_CHANNEL_ID&env=MJ_USER_TOKEN&env=CODE&project-name=chatgpt-midjourney&repository-name=ChatGPT-Midjourney)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLicoy%2FChatGPT-Midjourney&env=OPENAI_API_KEY&env=MJ_PROXY_URL&env=MJ_PROXY_KEY&env=CODE&project-name=chatgpt-midjourney&repository-name=ChatGPT-Midjourney)
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/1g6vDL?referralCode=vvEj-K)
 ### Sealos
@@ -83,24 +84,18 @@ npm run build
 npm run start // #或者开发模式启动： npm run dev
 ```
 ## 使用
-### ⚠ 注意事项
-- 在绘画之前需要关闭Remix模式，否则会出现无法Vary、Pan、Zoom等无法绘画的情况：在Discord中输入`/setting`，然后点击`Remix Mode`即可关闭。
 ### 创建绘画
-在输入框中以`/mj`开头输入您的绘画描述，即可进行创建绘画，例如：
-```
-/mj a dog
-```
-### 混图、识图、垫图
-![mj-5](./docs/images/mj-5.png)
-> 提示：垫图模式/识图(describe)模式只会使用第一张图片，混图(blend)模式会按顺序使用选中的两张图片（点击图片可以移除）
-
+部署好后，点击左上方的绘画，选择您需要使用的绘画模型即可进入：
+![step-1](./docs/images/step-1.png)
 ## 截图
-### 混图、识图、垫图
-![mj-4](./docs/images/mj-4.png)
-### 状态实时获取
-![mj-2](./docs/images/mj-1.png)
-### 自定义midjourney参数
-![mj-2](./docs/images/mj-2.png)
+### Midjourney生成主界面
+![step-1](./docs/images/step-2.png)
+### Midjourney区域重绘
+![step-1](./docs/images/step-5.png)
+### StabilityAI生成主界面
+![step-1](./docs/images/step-3.png)
+### 自定义配置接口
+![step-1](./docs/images/step-4.png)
 ### 更多功能
 等你自行发掘
 
